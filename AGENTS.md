@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Homepage is a single scroll page in src/routes/index.tsx with section anchors matching nav ids; scroll reveal/count-up live in src/hooks/use-reveal.ts — keeps the competition demo self-contained.
