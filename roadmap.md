@@ -1,3 +1,3 @@
 # Roadmap
-- [ ] Build FISAT redesign homepage with uploaded assets
-- [ ] Brief truncated after Section 6 (Student Life) — completed with sensible sections; await rest from user
+- [x] Build FISAT redesign homepage with uploaded assets
+- [ ] Brief cut off at Section 6 (Student Life) — waiting on the rest from user
