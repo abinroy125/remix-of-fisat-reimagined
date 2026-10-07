@@ -26,25 +26,26 @@ import {
   Phone,
 } from "lucide-react";
 
-import logoTransparent from "@/assets/fisat-logo-transparent.png.asset.json";
-import artsSports from "@/assets/arts-sports.jpg.asset.json";
-import placementsBanner from "@/assets/placements.jpg.asset.json";
-import cseBanner from "@/assets/cse-banner.jpg.asset.json";
-import cfsBanner from "@/assets/cfs-banner.jpg.asset.json";
-import tcsBanner from "@/assets/tcs.jpg.asset.json";
-import rankingsBanner from "@/assets/rankings.jpg.asset.json";
-import eieCover from "@/assets/eie.png.asset.json";
-import auditorium from "@/assets/auditorium.jpg";
-import realMain from "@/assets/real-main-campus.jpg.asset.json";
-import realAcademic from "@/assets/real-academic-block.jpg.asset.json";
-import realLibrary from "@/assets/real-library.jpg.asset.json";
-import realInnov from "@/assets/real-innovation-lab.jpg.asset.json";
-import realInnov2 from "@/assets/real-innovation-lab-2.jpg.asset.json";
-import realGround from "@/assets/real-sports-ground.jpg.asset.json";
-import realSports from "@/assets/real-sports.jpg.asset.json";
-import realGym from "@/assets/real-gym.jpg.asset.json";
 import { useCountUp, useRevealAll } from "@/hooks/use-reveal";
 import { cn } from "@/lib/utils";
+
+const logoTransparent = { url: "/images/fisat-logo-transparent.png" };
+const artsSports = { url: "/images/arts-sports.jpg" };
+const placementsBanner = { url: "/images/placements.jpg" };
+const cseBanner = { url: "/images/cse-banner.jpg" };
+const cfsBanner = { url: "/images/cfs-banner.jpg" };
+const tcsBanner = { url: "/images/tcs.jpg" };
+const rankingsBanner = { url: "/images/rankings.jpg" };
+const eieCover = { url: "/images/eie.png" };
+const auditorium = "/images/auditorium.jpg";
+const realMain = { url: "/images/real-main-campus.jpg" };
+const realAcademic = { url: "/images/real-academic-block.jpg" };
+const realLibrary = { url: "/images/real-library.jpg" };
+const realInnov = { url: "/images/real-innovation-lab.jpg" };
+const realInnov2 = { url: "/images/real-innovation-lab-2.jpg" };
+const realGround = { url: "/images/real-sports-ground.jpg" };
+const realSports = { url: "/images/real-sports.jpg" };
+const realGym = { url: "/images/real-gym.jpg" };
 
 export const Route = createFileRoute("/")({
   head: () => ({
