@@ -46,6 +46,7 @@ const realInnov2 = { url: "/images/real-innovation-lab-2.jpg" };
 const realGround = { url: "/images/real-sports-ground.jpg" };
 const realSports = { url: "/images/real-sports.jpg" };
 const realHostel = { url: "/images/real-hostel.jpg" };
+const realCanteen = { url: "/images/real-canteen.jpg" };
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -273,7 +274,7 @@ const PLACES = [
   { name: "Hostels", icon: Home, x: 82, y: 72, img: realHostel.url, d: "Safe, comfortable residences for men and women with mess, Wi-Fi and 24/7 support." },
   { name: "Sports Facilities", icon: Dumbbell, x: 18, y: 70, img: realGround.url, d: "Football ground, courts and gym — the place to unwind and compete." },
   { name: "Auditorium", icon: Mic2, x: 46, y: 56, img: auditorium, d: "Home to tech talks, conferences, cultural nights and convocation." },
-  { name: "Cafeteria", icon: Coffee, x: 62, y: 80, img: undefined, d: "Kerala meals, chai and the best conversations on campus." },
+  { name: "Cafeteria", icon: Coffee, x: 62, y: 80, img: realCanteen.url, d: "Kerala meals, chai and the best conversations on campus." },
   { name: "Student Activity Areas", icon: Music, x: 36, y: 86, img: artsSports.url, d: "Courtyards that turn into stages — fests, band nights and club meets." },
 ];
 

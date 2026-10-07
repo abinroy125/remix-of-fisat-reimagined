@@ -40,9 +40,8 @@ describe("Portable image assets", () => {
     expect(imageForLocation("Hostels")).toBe("/images/real-hostel.jpg");
   });
 
-  it("leaves Cafeteria without an unrelated photo while its upload is missing", () => {
-    expect(homepage).toMatch(/name: "Cafeteria"[^\n]+img: undefined,/);
-    expect(imageForLocation("Cafeteria")).toBeUndefined();
+  it("maps Cafeteria to the uploaded canteen photo", () => {
+    expect(imageForLocation("Cafeteria")).toBe("/images/real-canteen.jpg");
   });
 
   it("keeps Sports Facilities mapped to the sports ground", () => {
