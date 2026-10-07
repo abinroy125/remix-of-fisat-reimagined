@@ -99,12 +99,12 @@ function Nav() {
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6">
       <nav
         className={cn(
-          "mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-2xl px-3 py-2 transition-all duration-500",
+          "mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-2xl px-3 py-2.5 transition-all duration-500",
           scrolled || open ? "glass shadow-lift" : "bg-transparent",
         )}
       >
         <a href="#home" className="shrink-0 rounded-xl bg-card px-2.5 py-1.5" aria-label="FISAT home">
-          <img src={logo.url} alt="FISAT — Federal Institute of Science and Technology" className={cn("w-auto transition-all duration-500", scrolled ? "h-9" : "h-11")} />
+          <img src={logo.url} alt="FISAT — Federal Institute of Science and Technology" className={cn("w-auto transition-all duration-500", scrolled ? "h-11 sm:h-14" : "h-14 sm:h-20")} />
         </a>
         <ul className="hidden items-center gap-1 lg:flex">
           {NAV.map((n) => (
