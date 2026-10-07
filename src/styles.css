@@ -138,3 +138,5 @@
   .reveal { opacity: 1; transform: none; transition: none; }
   * { animation: none !important; }
 }
+
+@keyframes kenburns { from { transform: scale(1.12); opacity:.4 } to { transform: scale(1); opacity:1 } }

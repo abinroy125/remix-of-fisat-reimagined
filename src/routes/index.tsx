@@ -40,6 +40,14 @@ import library from "@/assets/library.jpg";
 import innovation from "@/assets/innovation.jpg";
 import sports from "@/assets/sports.jpg";
 import auditorium from "@/assets/auditorium.jpg";
+import realMain from "@/assets/real-main-campus.jpg.asset.json";
+import realAcademic from "@/assets/real-academic-block.jpg.asset.json";
+import realLibrary from "@/assets/real-library.jpg.asset.json";
+import realInnov from "@/assets/real-innovation-lab.jpg.asset.json";
+import realInnov2 from "@/assets/real-innovation-lab-2.jpg.asset.json";
+import realGround from "@/assets/real-sports-ground.jpg.asset.json";
+import realSports from "@/assets/real-sports.jpg.asset.json";
+import realGym from "@/assets/real-gym.jpg.asset.json";
 import { useCountUp, useRevealAll } from "@/hooks/use-reveal";
 import { cn } from "@/lib/utils";
 
@@ -104,7 +112,7 @@ function Nav() {
           scrolled || open ? "glass shadow-lift" : "bg-transparent",
         )}
       >
-        <a href="#home" className="shrink-0 rounded-xl bg-card px-2.5 py-1.5" aria-label="FISAT home">
+        <a href="#home" className="shrink-0 rounded-2xl bg-card/95 px-3 py-1.5 shadow-lift ring-1 ring-border/60 transition-transform hover:scale-[1.02]" aria-label="FISAT home">
           <img src={logoTransparent.url} alt="FISAT — Federal Institute of Science and Technology" className={cn("w-auto transition-all duration-500", scrolled ? "h-11 sm:h-14" : "h-14 sm:h-20")} />
         </a>
         <ul className="hidden items-center gap-1 lg:flex">
@@ -154,12 +162,12 @@ function Hero() {
   const chips = [
     { icon: Cpu, label: "Technology", cls: "left-[6%] top-[30%]" },
     { icon: BookOpen, label: "Education", cls: "right-[8%] top-[26%] [animation-delay:1.5s]" },
-    { icon: Lightbulb, label: "Innovation", cls: "right-[14%] bottom-[24%] [animation-delay:3s]" },
-    { icon: Users, label: "Student life", cls: "left-[10%] bottom-[20%] [animation-delay:2s]" },
+    { icon: Lightbulb, label: "Innovation", cls: "right-[12%] bottom-[22%] [animation-delay:3s]" },
   ];
   return (
     <section id="home" className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink text-on-ink">
-      <img src={artsSports.url} alt="Students celebrating at a FISAT campus fest" className="absolute inset-0 h-full w-full scale-110 object-cover" style={{ transform: `translateY(${y * 0.3}px) scale(1.1)` }} />
+      <img src={realMain.url} alt="FISAT main campus building, Angamaly" fetchPriority="high" className="absolute inset-0 h-full w-full object-cover object-[center_40%] will-change-transform" style={{ transform: `translateY(${y * 0.3}px) scale(1.1)` }} />
+      <div className="absolute inset-0 bg-ink/45" />
       <div className="absolute inset-0 bg-hero-fade" />
       <div className="absolute inset-0 grid-lines opacity-60" />
       <div className="pointer-events-none absolute -right-40 -top-40 h-[560px] w-[560px] rounded-full border border-saffron/25 animate-spin-slow">
@@ -263,13 +271,13 @@ function Intro() {
 
 /* ---------------- EXPLORE (CAMPUS MAP) ---------------- */
 const PLACES = [
-  { name: "Academic Blocks", icon: Building2, x: 30, y: 30, img: labPhoto.url, d: "Five storeys of classrooms, studios and NBA-accredited labs where theory meets hands-on practice." },
-  { name: "Library", icon: BookOpen, x: 55, y: 22, img: library, d: "A quiet, sunlit knowledge hub with 50,000+ volumes, digital journals and late-hours reading rooms." },
-  { name: "Innovation Hub", icon: Lightbulb, x: 76, y: 38, img: innovation, d: "Robotics, drones, 3D printing and the Centre for Future Skills — where ideas get built." },
+  { name: "Academic Blocks", icon: Building2, x: 30, y: 30, img: realAcademic.url, d: "Five storeys of classrooms, studios and NBA-accredited labs where theory meets hands-on practice." },
+  { name: "Library", icon: BookOpen, x: 55, y: 22, img: realLibrary.url, d: "A quiet, sunlit knowledge hub with 50,000+ volumes, digital journals and late-hours reading rooms." },
+  { name: "Innovation Hub", icon: Lightbulb, x: 76, y: 38, img: realInnov.url, d: "Robotics, drones, 3D printing and the Centre for Future Skills — where ideas get built." },
   { name: "Hostels", icon: Home, x: 82, y: 72, img: artsSports.url, d: "Safe, comfortable residences for men and women with mess, Wi-Fi and 24/7 support." },
-  { name: "Sports Facilities", icon: Dumbbell, x: 18, y: 70, img: sports, d: "Football ground, courts and gym — the place to unwind and compete." },
+  { name: "Sports Facilities", icon: Dumbbell, x: 18, y: 70, img: realGround.url, d: "Football ground, courts and gym — the place to unwind and compete." },
   { name: "Auditorium", icon: Mic2, x: 46, y: 56, img: auditorium, d: "Home to tech talks, conferences, cultural nights and convocation." },
-  { name: "Cafeteria", icon: Coffee, x: 62, y: 80, img: sports, d: "Kerala meals, chai and the best conversations on campus." },
+  { name: "Cafeteria", icon: Coffee, x: 62, y: 80, img: realGym.url, d: "Kerala meals, chai and the best conversations on campus." },
   { name: "Student Activity Areas", icon: Music, x: 36, y: 86, img: artsSports.url, d: "Courtyards that turn into stages — fests, band nights and club meets." },
 ];
 
@@ -329,7 +337,8 @@ function Explore() {
 
           <article key={p.name} className="reveal in animate-rise overflow-hidden rounded-3xl bg-card text-card-foreground shadow-lift">
             <div className="relative aspect-[16/10] overflow-hidden">
-              <img src={p.img} alt={p.name} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+              <img src={p.img} alt={p.name} className="h-full w-full animate-[kenburns_6s_ease-out_forwards] object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
               <span className="absolute left-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-xs font-semibold text-on-ink">
                 {String(active + 1).padStart(2, "0")} / {String(PLACES.length).padStart(2, "0")}
               </span>
@@ -436,7 +445,7 @@ function Academics() {
               <h2 className="mt-4 font-display text-[clamp(2.75rem,6vw,5.5rem)] font-extrabold leading-[0.95] text-primary">Learn Without Limits.</h2>
               <p className="mt-5 max-w-sm text-muted-foreground">NBA-accredited B.Tech programmes, plus MBA and MCA — taught by people who have built things.</p>
             </div>
-            <img src={labPhoto.url} alt="FISAT faculty guiding students in an electronics lab" loading="lazy" className="reveal mt-10 hidden aspect-[4/3] w-full rounded-3xl object-cover lg:block" />
+            <img src={realAcademic.url} alt="Students working in a FISAT computer lab" loading="lazy" className="reveal mt-10 hidden aspect-[4/3] w-full rounded-3xl object-cover lg:block" />
           </div>
           <div className="space-y-3">
             {DEPTS.map((d, i) => {
@@ -477,7 +486,7 @@ function Academics() {
 function Innovation() {
   const items = [
     { t: "Research", d: "Funded projects across AI, energy and materials.", img: eieCover.url },
-    { t: "Student Projects", d: "Robots, drones and apps built every semester.", img: innovation },
+    { t: "Student Projects", d: "Robots, drones and apps built every semester.", img: realInnov2.url },
     { t: "Startups", d: "Incubation support from idea to first customer." },
     { t: "Hackathons", d: "24-hour sprints that end in demos, not slides." },
     { t: "Industry Collaboration", d: "Microsoft, AWS, Intel, IBM, Cisco, Apple & more." },
@@ -495,7 +504,7 @@ function Innovation() {
 
         <div className="mt-14 grid gap-5 lg:grid-cols-12">
           <article className="reveal group relative overflow-hidden rounded-3xl bg-ink text-on-ink lg:col-span-7 lg:row-span-2">
-            <img src={innovation} alt="Students building drones in the innovation lab" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-1000 group-hover:scale-105" />
+            <img src={realInnov.url} alt="FISAT innovation lab with fabrication equipment" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-70 transition-transform duration-1000 group-hover:scale-105" />
             <div className="absolute inset-0 bg-hero-fade" />
             <div className="relative flex min-h-[520px] flex-col justify-end p-8 md:p-10">
               <span className="w-fit rounded-full bg-sun px-3 py-1 text-xs font-bold uppercase tracking-wider text-ink">Featured project</span>
@@ -524,7 +533,7 @@ function Innovation() {
           ))}
         </div>
 
-        <figure className="reveal mt-10 overflow-hidden rounded-3xl border border-border">
+        <figure className="reveal mx-auto mt-10 max-w-3xl overflow-hidden rounded-3xl border border-border shadow-lift">
           <img src={cfsBanner.url} alt="Centre for Future Skills at FISAT with industry partners" loading="lazy" className="w-full" />
         </figure>
       </div>
@@ -549,8 +558,8 @@ function StudentLife() {
             <figcaption className="absolute bottom-4 left-4 rounded-full glass px-4 py-2 text-sm">Arts fest, main courtyard</figcaption>
           </figure>
           <figure className="reveal group relative overflow-hidden rounded-3xl lg:col-span-5">
-            <img src={sports} alt="Students playing football at sunset" loading="lazy" className="aspect-[4/3] w-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-            <figcaption className="absolute bottom-4 left-4 rounded-full glass px-4 py-2 text-sm">Evenings on the ground</figcaption>
+            <img src={realSports.url} alt="Students playing basketball on the FISAT court" loading="lazy" className="aspect-[4/3] w-full object-cover object-[center_45%] transition-transform duration-1000 group-hover:scale-105" />
+            <figcaption className="absolute bottom-4 left-4 rounded-full glass px-4 py-2 text-sm">Evenings on the court</figcaption>
           </figure>
         </div>
       </div>
@@ -664,7 +673,7 @@ function Footer() {
       <div className="border-t border-on-ink/10">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <span className="inline-block rounded-2xl bg-card p-3"><img src={logo.url} alt="FISAT" className="h-16 w-auto" loading="lazy" /></span>
+            <span className="inline-block rounded-2xl bg-card/95 px-3 py-2 ring-1 ring-on-ink/10"><img src={logoTransparent.url} alt="FISAT" className="h-14 w-auto" loading="lazy" /></span>
             <p className="mt-5 max-w-sm text-sm text-on-ink-muted">Federal Institute of Science and Technology, Hormis Nagar, Mookkannoor P.O., Angamaly, Ernakulam, Kerala 683577</p>
           </div>
           <div>
