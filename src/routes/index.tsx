@@ -192,12 +192,6 @@ function Hero() {
         </div>
       </div>
 
-      <a href="#about" className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-[0.25em] text-on-ink/60" aria-label="Scroll down">
-        <span className="flex h-10 w-6 justify-center rounded-full border border-on-ink/40 pt-2">
-          <span className="h-2 w-1 rounded-full bg-saffron animate-scroll-dot" />
-        </span>
-        Scroll
-      </a>
     </section>
   );
 }
