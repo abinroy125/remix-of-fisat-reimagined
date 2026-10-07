@@ -25,4 +25,27 @@ describe("Portable image assets", () => {
       expect(source).not.toContain("/__l5e/assets-v1/");
     }
   });
+
+  const homepage = sources[0] ?? "";
+  const imageForLocation = (location: string) => {
+    const value = homepage.match(new RegExp(`name: "${location}"[^\\n]+img: ([^,]+),`))?.[1];
+    if (value === "undefined") return undefined;
+    const variable = value?.replace(/\.url$/, "");
+    return variable
+      ? homepage.match(new RegExp(`const ${variable} = \\{ url: "([^"]+)"`))?.[1]
+      : undefined;
+  };
+
+  it("maps Hostels to the uploaded hostel photo", () => {
+    expect(imageForLocation("Hostels")).toBe("/images/real-hostel.jpg");
+  });
+
+  it("leaves Cafeteria without an unrelated photo while its upload is missing", () => {
+    expect(homepage).toMatch(/name: "Cafeteria"[^\n]+img: undefined,/);
+    expect(imageForLocation("Cafeteria")).toBeUndefined();
+  });
+
+  it("keeps Sports Facilities mapped to the sports ground", () => {
+    expect(imageForLocation("Sports Facilities")).toBe("/images/real-sports-ground.jpg");
+  });
 });
