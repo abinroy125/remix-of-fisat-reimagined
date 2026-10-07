@@ -9,7 +9,9 @@ describe("Portable image assets", () => {
 
   it("ships every referenced image in public/images", () => {
     const paths = sources.flatMap((source) =>
-      Array.from(source.matchAll(/"(\/images\/[^"\s]+)"/g), (match) => match[1]),
+      Array.from(source.matchAll(/"(\/images\/[^"\s]+)"/g), (match) => match[1]).filter(
+        (path): path is string => typeof path === "string",
+      ),
     );
     expect(paths.length).toBeGreaterThan(0);
     for (const path of paths) {
