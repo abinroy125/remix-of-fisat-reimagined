@@ -280,7 +280,7 @@ const PLACES = [
 
 function Explore() {
   const [active, setActive] = useState(2);
-  const p = PLACES[active];
+  const p = PLACES[active] ?? PLACES[0]!;
   return (
     <section id="campus" className="relative overflow-hidden bg-ink-gradient py-28 text-on-ink md:py-36">
       <div className="absolute inset-0 grid-lines" />
