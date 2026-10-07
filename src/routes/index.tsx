@@ -26,19 +26,14 @@ import {
   Phone,
 } from "lucide-react";
 
-import logo from "@/assets/fisat-logo.png.asset.json";
 import logoTransparent from "@/assets/fisat-logo-transparent.png.asset.json";
 import artsSports from "@/assets/arts-sports.jpg.asset.json";
-import labPhoto from "@/assets/lab.jpg.asset.json";
 import placementsBanner from "@/assets/placements.jpg.asset.json";
 import cseBanner from "@/assets/cse-banner.jpg.asset.json";
 import cfsBanner from "@/assets/cfs-banner.jpg.asset.json";
 import tcsBanner from "@/assets/tcs.jpg.asset.json";
 import rankingsBanner from "@/assets/rankings.jpg.asset.json";
 import eieCover from "@/assets/eie.png.asset.json";
-import library from "@/assets/library.jpg";
-import innovation from "@/assets/innovation.jpg";
-import sports from "@/assets/sports.jpg";
 import auditorium from "@/assets/auditorium.jpg";
 import realMain from "@/assets/real-main-campus.jpg.asset.json";
 import realAcademic from "@/assets/real-academic-block.jpg.asset.json";
