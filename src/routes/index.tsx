@@ -99,7 +99,7 @@ function Nav() {
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6">
       <nav
         className={cn(
-          "mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-2xl px-3 py-2 transition-all duration-500",
+          "mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-2xl px-3 py-2.5 transition-all duration-500",
           scrolled || open ? "glass shadow-lift" : "bg-transparent",
         )}
       >
