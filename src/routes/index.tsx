@@ -104,7 +104,7 @@ function Nav() {
         )}
       >
         <a href="#home" className="shrink-0 rounded-xl bg-card px-2.5 py-1.5" aria-label="FISAT home">
-          <img src={logo.url} alt="FISAT — Federal Institute of Science and Technology" className={cn("w-auto transition-all duration-500", scrolled ? "h-9" : "h-11")} />
+          <img src={logo.url} alt="FISAT — Federal Institute of Science and Technology" className={cn("w-auto transition-all duration-500", scrolled ? "h-14" : "h-20")} />
         </a>
         <ul className="hidden items-center gap-1 lg:flex">
           {NAV.map((n) => (
