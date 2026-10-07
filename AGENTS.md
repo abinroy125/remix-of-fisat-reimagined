@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Homepage is a single scroll page in src/routes/index.tsx with section anchors matching nav ids; scroll reveal/count-up live in src/hooks/use-reveal.ts — keeps the competition demo self-contained.
+- Keep static image binaries in public/images and reference them with root-relative /images/ paths so GitHub exports and external deployments include every image without Lovable asset serving.
