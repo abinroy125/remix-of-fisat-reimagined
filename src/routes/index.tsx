@@ -45,7 +45,7 @@ const realInnov = { url: "/images/real-innovation-lab.jpg" };
 const realInnov2 = { url: "/images/real-innovation-lab-2.jpg" };
 const realGround = { url: "/images/real-sports-ground.jpg" };
 const realSports = { url: "/images/real-sports.jpg" };
-const realGym = { url: "/images/real-gym.jpg" };
+const realHostel = { url: "/images/real-hostel.jpg" };
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -270,10 +270,10 @@ const PLACES = [
   { name: "Academic Blocks", icon: Building2, x: 30, y: 30, img: realAcademic.url, d: "Five storeys of classrooms, studios and NBA-accredited labs where theory meets hands-on practice." },
   { name: "Library", icon: BookOpen, x: 55, y: 22, img: realLibrary.url, d: "A quiet, sunlit knowledge hub with 50,000+ volumes, digital journals and late-hours reading rooms." },
   { name: "Innovation Hub", icon: Lightbulb, x: 76, y: 38, img: realInnov.url, d: "Robotics, drones, 3D printing and the Centre for Future Skills — where ideas get built." },
-  { name: "Hostels", icon: Home, x: 82, y: 72, img: artsSports.url, d: "Safe, comfortable residences for men and women with mess, Wi-Fi and 24/7 support." },
+  { name: "Hostels", icon: Home, x: 82, y: 72, img: realHostel.url, d: "Safe, comfortable residences for men and women with mess, Wi-Fi and 24/7 support." },
   { name: "Sports Facilities", icon: Dumbbell, x: 18, y: 70, img: realGround.url, d: "Football ground, courts and gym — the place to unwind and compete." },
   { name: "Auditorium", icon: Mic2, x: 46, y: 56, img: auditorium, d: "Home to tech talks, conferences, cultural nights and convocation." },
-  { name: "Cafeteria", icon: Coffee, x: 62, y: 80, img: realGym.url, d: "Kerala meals, chai and the best conversations on campus." },
+  { name: "Cafeteria", icon: Coffee, x: 62, y: 80, img: undefined, d: "Kerala meals, chai and the best conversations on campus." },
   { name: "Student Activity Areas", icon: Music, x: 36, y: 86, img: artsSports.url, d: "Courtyards that turn into stages — fests, band nights and club meets." },
 ];
 
@@ -333,7 +333,7 @@ function Explore() {
 
           <article key={p.name} className="reveal in animate-rise overflow-hidden rounded-3xl bg-card text-card-foreground shadow-lift">
             <div className="relative aspect-[16/10] overflow-hidden">
-              <img src={p.img} alt={p.name} className="h-full w-full animate-[kenburns_6s_ease-out_forwards] object-cover" />
+              {p.img && <img src={p.img} alt={p.name} className="h-full w-full animate-[kenburns_6s_ease-out_forwards] object-cover" />}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/40 to-transparent" />
               <span className="absolute left-4 top-4 rounded-full bg-ink/70 px-3 py-1 text-xs font-semibold text-on-ink">
                 {String(active + 1).padStart(2, "0")} / {String(PLACES.length).padStart(2, "0")}
