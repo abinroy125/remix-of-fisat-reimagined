@@ -29,7 +29,7 @@ export function useCountUp(to: number, decimals = 0, duration = 1800) {
     if (!el) return;
     let raf = 0;
     const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return;
+      if (!e || !e.isIntersecting) return;
       io.disconnect();
       const start = performance.now();
       const tick = (t: number) => {
