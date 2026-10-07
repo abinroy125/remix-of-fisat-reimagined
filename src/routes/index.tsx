@@ -26,6 +26,7 @@ import {
   Phone,
 } from "lucide-react";
 
+import logo from "@/assets/fisat-logo.png.asset.json";
 import logoTransparent from "@/assets/fisat-logo-transparent.png.asset.json";
 import artsSports from "@/assets/arts-sports.jpg.asset.json";
 import labPhoto from "@/assets/lab.jpg.asset.json";
